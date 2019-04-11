@@ -1,5 +1,17 @@
 #!/bin/bash
 wifiip=$(ip addr |grep inet |grep -v inet6 |grep wlan0|awk '{print $2}' |awk -F "/" '{print $1}')
+
+for rc in {1..3}
+
+do
+{
+   if [ ! -f "/var/www/html/ip/index.html" ];then  >/dev/null
+   mkdir /var/www/html/ip
+   touch /var/www/html/ip/index.html
+
+else
+
+
     > /var/www/html/ip/index.html
  cat <<EOF >>  /var/www/html/ip/index.html
        
@@ -48,3 +60,7 @@ wifiip=$(ip addr |grep inet |grep -v inet6 |grep wlan0|awk '{print $2}' |awk -F 
 </html> 
 EOF
 	echo "--------html------done-----------"
+echo "----------"
+fi
+}
+done
