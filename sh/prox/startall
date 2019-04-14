@@ -84,8 +84,8 @@ else
 fi
 ########################################
 if [ $de -eq 0 ]; then
-   deluged  >/dev/null  2>&1
-  nohup deluge-web  >/dev/null &
+ su admin -c  deluged  >/dev/null  2>&1
+  su admin -c nohup deluge-web  >/dev/null &
    echo "正在启动deluge-web"
    
 else
