@@ -88,5 +88,5 @@ fi
 else
     echo "PLEX正在运行"
 fi 
-echo "如果没有完全启动 可以运行 start.sh"
+echo "如果没有完全启动 可以运行 startall"
 exit 0
